@@ -29,20 +29,11 @@ export class LoginComponent {
    * 
    */
     
-get email() {
-  return this.loginForm.get('email');
-}
 
-get password() {
-  return this.loginForm.get('password');
-}
   login() {
+    this.router.navigate(['dashboard'])
 
-    if(this.loginForm.value.email === 'sai@gmail.com' && this.loginForm.value.password === 'sai@123'){
-      this.router.navigate(['dashboard'])
-    }else{
-      alert('Invalid Credentials')
-    }
+     
   
   }
 }

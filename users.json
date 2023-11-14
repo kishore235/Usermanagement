@@ -1,5 +1,5 @@
 {
-  "login": [
+  "users": [
     {
       "name": "sanotsh",
       "email": "santosh@gmail.com",
@@ -13,16 +13,10 @@
       "id": 7
     },
     {
-      "name": "",
-      "email": "",
-      "domain": "",
+      "name": "jbje",
+      "email": "dd",
+      "domain": "dd",
       "id": 8
-    },
-    {
-      "name": "",
-      "email": "",
-      "domain": "",
-      "id": 9
     }
   ]
 }

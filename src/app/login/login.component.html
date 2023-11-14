@@ -1,0 +1,33 @@
+
+<div class="complete"> 
+    <div class="container">
+    <div class="row justify-content-center mt-5">
+      <div class="col-6">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title text-center">Login Form</h2>
+            <form [formGroup]="loginForm">
+              
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter Email" formControlName="email"   required
+                >
+               
+              </div>
+              <div class="mb-3">
+                <label for="domain" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" minlength="8" placeholder="Enter Domain" formControlName="password"   required
+                >
+     
+              </div>
+              <div class="d-grid gap-2 mt-3">
+                <button class="btn btn-primary" (click)="login()">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  

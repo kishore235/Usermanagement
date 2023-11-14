@@ -1,0 +1,65 @@
+<div class="dashboard">
+ 
+    <div class="text-center">
+        <h1>User Mangement System</h1>
+    </div>
+    <div class="add-button d-flex  mb-3" style="justify-content: space-between;">
+        <button class="btn btn-primary float-end me-2 w-25" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+            (click)="addUser()">Add User</button>
+            <button class="btn btn-danger float-end me-2" 
+            routerLink="">Logout</button>
+    </div>
+
+    <div>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Domain</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of allUsers">
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.domain}}</td>
+                    <td><i class="fa-solid fa-user-pen fa-beat" style="color: #1dd7cb;" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop" (click)="editData(user)"></i> &nbsp;&nbsp;
+                        <i class="fa-solid fa-trash fa-beat-fade" style="color: #d71d1d;"
+                            (click)="deleteData(user.id)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div>
+                    <h2>{{showUpdateUserForm ? 'Update User' : 'Add User'}}</h2>
+                </div>
+                <form [formGroup]="registrationForm">
+                    <label for="" class="form-label">Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Name" formControlName="name">
+                    <label for="" class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="Enter Email" formControlName="email">
+                    <label for="" class="form-label">Domain</label>
+                    <input type="text" class="form-control" placeholder="Enter Domain" formControlName="domain">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button *ngIf="showUpdateUserForm" type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                    (click)="updateData()">Update</button>
+                <button *ngIf="!showUpdateUserForm" type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                    (click)="submitUserData()">Add</button>
+
+            </div>
+        </div>
+    </div>
+</div>
